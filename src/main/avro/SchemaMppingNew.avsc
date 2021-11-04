@@ -1,0 +1,89 @@
+{
+    "connect.name": "com.intellias.kafka.adapter.model.Case",
+    "fields": [
+      {
+        "default": null,
+	    "optional":false,
+        "name": "Type",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+	{
+        "default": null,
+	"optional":false,
+        "name": "AccountId",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+	{
+        "default": null,
+	"optional":true,
+        "name": "Contract__c",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      {
+        "default": null,
+	"optional":false,
+        "name": "Case_Sub_Type__c",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+	{
+        "default": null,
+	"optional":true,
+        "name": "MSISDN__c",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+	{
+        "default": null,
+	"optional":false,
+        "name": "Case_Detail__c",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+	{
+        "default": null,
+	"optional":false,
+        "name": "DMSAttachmentRefId__c",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      {
+        "default": null,
+	"optional":false,
+        "name": "_ObjectType",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+	{
+        "default": null,
+        "name": "_EventType",
+        "type": [
+          "null",
+          "string"
+        ]
+      }
+      
+    ],
+    "name": "Case",
+    "namespace": "com.intellias.kafka.adapter.model",
+    "type": "record"
+  }

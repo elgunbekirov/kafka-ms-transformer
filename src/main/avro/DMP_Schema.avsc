@@ -1,0 +1,550 @@
+{
+  "fields": [
+    {
+      "name": "eventId",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "eventTime",
+      "type": {
+        "logicalType": "timestamp-millis",
+        "type": "long"
+      }
+    },
+    {
+      "name": "eventType",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "correlationId",
+      "type": [
+        "null",
+        {
+          "avro.java.string": "String",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "domain",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "title",
+      "type": [
+        "null",
+        {
+          "avro.java.string": "String",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "description",
+      "type": [
+        "null",
+        {
+          "avro.java.string": "String",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "priority",
+      "type": [
+        "null",
+        {
+          "avro.java.string": "String",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "timeOcurred",
+      "type": {
+        "logicalType": "timestamp-millis",
+        "type": "long"
+      }
+    },
+    {
+      "name": "event",
+      "type": {
+        "fields": [
+          {
+            "name": "document",
+            "type": {
+              "fields": [
+                {
+                  "name": "id",
+                  "type": {
+                    "avro.java.string": "String",
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "href",
+                  "type": [
+                    "null",
+                    {
+                      "avro.java.string": "String",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "name": "type",
+                  "type": [
+                    "null",
+                    {
+                      "avro.java.string": "String",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "name": "name",
+                  "type": [
+                    "null",
+                    {
+                      "avro.java.string": "String",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "name": "description",
+                  "type": [
+                    "null",
+                    {
+                      "avro.java.string": "String",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "name": "lifecycleState",
+                  "type": [
+                    "null",
+                    {
+                      "avro.java.string": "String",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "name": "version",
+                  "type": [
+                    "null",
+                    {
+                      "avro.java.string": "String",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "name": "creationDate",
+                  "type": {
+                    "logicalType": "timestamp-millis",
+                    "type": "long"
+                  }
+                },
+                {
+                  "name": "lastUpdate",
+                  "type": {
+                    "logicalType": "timestamp-millis",
+                    "type": "long"
+                  }
+                },
+                {
+                  "name": "characteristic",
+                  "type": [
+                    {
+                      "items": {
+                        "fields": [
+                          {
+                            "name": "name",
+                            "type": {
+                              "avro.java.string": "String",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "value",
+                            "type": [
+                              "null",
+                              {
+                                "avro.java.string": "String",
+                                "type": "string"
+                              }
+                            ]
+                          }
+                        ],
+                        "name": "DocumentCharacteristic",
+                        "type": "record"
+                      },
+                      "type": "array"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "relatedParty",
+                  "type": [
+                    {
+                      "items": {
+                        "fields": [
+                          {
+                            "name": "id",
+                            "type": {
+                              "avro.java.string": "String",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "href",
+                            "type": [
+                              "null",
+                              {
+                                "avro.java.string": "String",
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          {
+                            "name": "role",
+                            "type": [
+                              "null",
+                              {
+                                "avro.java.string": "String",
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          {
+                            "name": "name",
+                            "type": [
+                              "null",
+                              {
+                                "avro.java.string": "String",
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          {
+                            "name": "validFor",
+                            "type": [
+                              {
+                                "fields": [
+                                  {
+                                    "name": "startDateTime",
+                                    "type": {
+                                      "logicalType": "timestamp-millis",
+                                      "type": "long"
+                                    }
+                                  },
+                                  {
+                                    "name": "endDateTime",
+                                    "type": {
+                                      "logicalType": "timestamp-millis",
+                                      "type": "long"
+                                    }
+                                  }
+                                ],
+                                "name": "TimePeriod",
+                                "type": "record"
+                              },
+                              "null"
+                            ]
+                          }
+                        ],
+                        "name": "RelatedPartyRef",
+                        "type": "record"
+                      },
+                      "type": "array"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "documentSpecification",
+                  "type": [
+                    {
+                      "fields": [
+                        {
+                          "name": "id",
+                          "type": {
+                            "avro.java.string": "String",
+                            "type": "string"
+                          }
+                        },
+                        {
+                          "name": "name",
+                          "type": [
+                            "null",
+                            {
+                              "avro.java.string": "String",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "version",
+                          "type": [
+                            "null",
+                            {
+                              "avro.java.string": "String",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "href",
+                          "type": [
+                            "null",
+                            {
+                              "avro.java.string": "String",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "URL",
+                          "type": [
+                            "null",
+                            {
+                              "avro.java.string": "String",
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      ],
+                      "name": "DocumentSpecification",
+                      "type": "record"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "binaryAttachment",
+                  "type": [
+                    {
+                      "items": {
+                        "fields": [
+                          {
+                            "name": "description",
+                            "type": [
+                              "null",
+                              {
+                                "avro.java.string": "String",
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          {
+                            "name": "href",
+                            "type": [
+                              "null",
+                              {
+                                "avro.java.string": "String",
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          {
+                            "name": "id",
+                            "type": {
+                              "avro.java.string": "String",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "type",
+                            "type": [
+                              "null",
+                              {
+                                "avro.java.string": "String",
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          {
+                            "name": "url",
+                            "type": [
+                              "null",
+                              {
+                                "avro.java.string": "String",
+                                "type": "string"
+                              }
+                            ]
+                          }
+                        ],
+                        "name": "Attachment",
+                        "type": "record"
+                      },
+                      "type": "array"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "category",
+                  "type": [
+                    {
+                      "items": {
+                        "fields": [
+                          {
+                            "name": "id",
+                            "type": [
+                              "null",
+                              {
+                                "avro.java.string": "String",
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          {
+                            "name": "href",
+                            "type": [
+                              "null",
+                              {
+                                "avro.java.string": "String",
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          {
+                            "name": "version",
+                            "type": [
+                              "null",
+                              {
+                                "avro.java.string": "String",
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          {
+                            "name": "name",
+                            "type": [
+                              "null",
+                              {
+                                "avro.java.string": "String",
+                                "type": "string"
+                              }
+                            ]
+                          }
+                        ],
+                        "name": "CategoryRef",
+                        "type": "record"
+                      },
+                      "type": "array"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "documentRelationship",
+                  "type": [
+                    {
+                      "items": {
+                        "fields": [
+                          {
+                            "name": "type",
+                            "type": [
+                              "null",
+                              {
+                                "avro.java.string": "String",
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          {
+                            "name": "documentRef",
+                            "type": {
+                              "fields": [
+                                {
+                                  "name": "id",
+                                  "type": {
+                                    "avro.java.string": "String",
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "name": "href",
+                                  "type": [
+                                    "null",
+                                    {
+                                      "avro.java.string": "String",
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "name": "DocumentRef",
+                              "type": "record"
+                            }
+                          }
+                        ],
+                        "name": "DocumentRelationship",
+                        "type": "record"
+                      },
+                      "type": "array"
+                    },
+                    "null"
+                  ]
+                },
+                {
+                  "name": "relatedObject",
+                  "type": [
+                    {
+                      "fields": [
+                        {
+                          "name": "involvement",
+                          "type": [
+                            "null",
+                            {
+                              "avro.java.string": "String",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "reference",
+                          "type": [
+                            "null",
+                            {
+                              "avro.java.string": "String",
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      ],
+                      "name": "RelatedObject",
+                      "type": "record"
+                    },
+                    "null"
+                  ]
+                }
+              ],
+              "name": "Document",
+              "type": "record"
+            }
+          }
+        ],
+        "name": "DocumentCreationNotificationPayload",
+        "type": "record"
+      }
+    }
+  ],
+  "name": "DocumentCreationNotification",
+  "namespace": "com.o2.dpm.documentmanagement",
+  "type": "record"
+}

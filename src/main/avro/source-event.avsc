@@ -1,0 +1,17 @@
+{
+  "namespace": "com.intellias.kafka.adapter.model",
+  "type": "record",
+  "name": "SourceEvent",
+  "fields": [
+    {
+      "name": "sourceField1",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+      "name": "sourceField2",
+      "type": "string",
+      "avro.java.string": "String"
+    }
+  ]
+}

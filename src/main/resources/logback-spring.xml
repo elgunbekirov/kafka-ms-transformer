@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <springProperty name="APPLICATION_ENVIRONMENT" source="application.environment"/>
+    <springProperty name="APPLICATION_NAME" source="spring.application.name"/>
+    <springProperty name="LOGBACK_ROOT_LEVEL" source="logging.level.root"/>
+
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
+    <appender name="json" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <timestamp/>
+                <globalCustomFields>
+                    <customFields>
+                        {
+                        "environment":"${APPLICATION_ENVIRONMENT}",
+                        "app":"${APPLICATION_NAME}"
+                        }
+                    </customFields>
+                </globalCustomFields>
+                <logLevel/>
+                <message/>
+                <loggerName>
+                    <fieldName>logger</fieldName>
+                </loggerName>
+                <threadName>
+                    <fieldName>thread</fieldName>
+                </threadName>
+                <stackTrace>
+                    <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
+                        <maxDepthPerThrowable>30</maxDepthPerThrowable>
+                        <maxLength>2048</maxLength>
+                        <rootCauseFirst>true</rootCauseFirst>
+                        <exclusions>excluded1,excluded2</exclusions>
+                        <exclude>^sun\.reflect\..*\.invoke</exclude>
+                        <exclude>^net\.sf\.cglib\.proxy\.MethodProxy\.invoke</exclude>
+                    </throwableConverter>
+                    <fieldName>exception</fieldName>
+                </stackTrace>
+                <jsonMessage/>
+                <pattern>
+                    <omitEmptyFields>true</omitEmptyFields>
+                </pattern>
+            </providers>
+        </encoder>
+    </appender>
+
+    <appender name="simple" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                %d{HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger{36}.%M - %msg%n
+            </pattern>
+        </layout>
+    </appender>
+
+    <root level="${LOGBACK_ROOT_LEVEL}">
+        <appender-ref ref="${LOGBACK_APPENDER:-json}"/>
+    </root>
+</configuration>

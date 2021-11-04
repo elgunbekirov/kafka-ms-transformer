@@ -1,0 +1,36 @@
+application:
+  kafka:
+    source-topic-name: source_topic
+    sink-topic-name: sink_topic
+
+logging:
+  level:
+    root: INFO
+
+spring:
+  application:
+    name: kafka-ms-transformer
+  profiles:
+    active: default
+  kafka:
+    bootstrap-servers: localhost:9092
+    listener:
+      poll-timeout: 15000
+    consumer:
+      auto-commit-interval: 100
+      auto-offset-reset: latest
+      enable-auto-commit: false
+      max-poll-records: 1
+      group-id: kafka-ms-transformer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        specific.avro.reader: true
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+    properties:
+      auto.register.schemas: true
+      schema.registry.url: http://localhost:8081
+      request.timeout.ms: 20000
+      retry.backoff.ms: 500

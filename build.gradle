@@ -1,0 +1,77 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id "org.springframework.boot" version "2.4.5"
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'com.github.davidmc24.gradle.plugin.avro' version '1.2.1'
+}
+
+ext {
+    springbootVersion = '2.5.5'
+    confluentPlatformComponentsVersion = '6.0.1'
+    springKafkaVersion = '2.7.6'
+    lombokVersion = '1.18.22'
+}
+
+group 'com.intellias.kafka.adapter'
+version = 'latest'
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://packages.confluent.io/maven"
+    }
+}
+
+dependencies {
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor:2.5.5'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+    implementation 'org.apache.avro:avro:1.10.2'
+
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation "org.apache.commons:commons-collections4:4.4"
+
+    implementation "org.springframework.kafka:spring-kafka:$springKafkaVersion"
+    implementation "org.springframework.boot:spring-boot:$springbootVersion"
+
+
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    implementation 'ch.qos.logback:logback-classic:1.2.6'
+    implementation 'org.codehaus.janino:janino:3.1.6'
+    implementation 'net.logstash.logback:logstash-logback-encoder:6.6'
+    
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
+    
+    // Kafka avro
+    implementation group: 'org.apache.avro', name: 'avro', version: '1.10.2'
+    implementation group: 'io.confluent', name: 'kafka-avro-serializer', version: "$confluentPlatformComponentsVersion"
+    implementation group: 'io.confluent', name: 'kafka-streams-avro-serde', version: "$confluentPlatformComponentsVersion"
+}
+// for Spring annotationProcessor
+compileJava.dependsOn(processResources)
+
+bootJar {
+    // https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html#org.gradle.api.tasks.bundling.Jar:archiveFileName
+    // https://docs.gradle.org/current/dsl/org.gradle.api.Project.html
+    // https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/htmlsingle/#packaging-executable
+    archiveFileName = project.name + '.jar'
+}
+
+bootRun {
+    systemProperties = System.properties
+    systemProperty "spring.profiles.active", "local"
+    systemProperty "APPLICATION_ENVIRONMENT", "local"
+}
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
