@@ -1,20 +1,23 @@
 package com.intellias.kafka.adapter.conversion;
 
 import org.codehaus.commons.nullanalysis.NotNull;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import com.intellias.kafka.adapter.model.Case;
 import com.o2.dpm.documentmanagement.DocumentCreationNotification;
-import com.o2.dpm.documentmanagement.DocumentCreationNotificationPayload;
 
 public final class EventConvertor {
 	
-    private static final Logger log = LoggerFactory.getLogger(EventConvertor.class);
-
-    private EventConvertor() {
-    }
-
-    public static DocumentCreationNotification convert(@NotNull DocumentCreationNotification event) {
-        return new DocumentCreationNotification(event.getEventId(), event.getEventTime(), event.getEventType(), event.getCorrelationId(), event.getDomain(), event.getTitle(), event.getDescription(), event.getPriority(), event.getTimeOcurred(), new DocumentCreationNotificationPayload() );  // DMP_SCHEMA  implementation 
+    public static Case convert(@NotNull DocumentCreationNotification event) {
+        return new Case(
+		        		"Port-Out Declaration", 
+		        		"0015r00000ItwGQAAZ",  
+		        		"8005r0000011KxhAAE",
+		        		"Port-Out",
+		        		event.getEvent().getDocument().getCharacteristic().get(2).toString(),
+		        		event.getEvent().getDocument().getCharacteristic().get(3).toString(),
+		        		"aabybxuwddngcqdsiid2lmakp5pgy",
+		        		"CASE",
+		        		event.getEventType()
+		        		);  // DMP_SCHEMA  implementation 
     }
 }

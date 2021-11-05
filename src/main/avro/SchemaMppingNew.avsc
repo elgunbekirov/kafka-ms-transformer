@@ -1,9 +1,9 @@
 {
-    "connect.name": "com.intellias.kafka.adapter.model.Case",
+    "connect.name": "io.confluent.salesforce.Case",
     "fields": [
       {
         "default": null,
-	    "optional":false,
+	"optional":false,
         "name": "Type",
         "type": [
           "null",
@@ -84,6 +84,6 @@
       
     ],
     "name": "Case",
-    "namespace": "com.intellias.kafka.adapter.model",
+    "namespace": "io.confluent.salesforce",
     "type": "record"
   }
