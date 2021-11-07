@@ -26,7 +26,8 @@ public class CommandLineAppStartupRunner implements CommandLineRunner {
                         
         String content = new String(FileCopyUtils
         		.copyToByteArray(ResourceUtils.getFile("classpath:input.json")), "UTF-8");
-
+        
+        System.out.println("content  = " + content); 
         
         Gson g = new Gson();
         DocumentCreationNotification event = g.fromJson(content, DocumentCreationNotification.class);
@@ -34,8 +35,7 @@ public class CommandLineAppStartupRunner implements CommandLineRunner {
 //        ObjectMapper mapper = new ObjectMapper();
 //   	    DocumentCreationNotification event = mapper
 //   			 .readValue( ResourceUtils.getFile("classpath:input.json"), DocumentCreationNotification.class);
-                
-   	    
+                   	    
         ListenableFuture sendResult = this.producer.send(new ProducerRecord(this.topicName, key, event));
 
         try 

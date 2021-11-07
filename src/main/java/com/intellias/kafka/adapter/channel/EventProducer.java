@@ -8,7 +8,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.util.concurrent.ListenableFuture;
 
-import com.intellias.kafka.adapter.model.Case;
+import io.confluent.salesforce.Case;
 
 @Component
 public class EventProducer {

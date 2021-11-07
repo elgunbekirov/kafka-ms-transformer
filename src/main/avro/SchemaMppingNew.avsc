@@ -3,7 +3,7 @@
     "fields": [
       {
         "default": null,
-	"optional":false,
+	    "optional":false,
         "name": "Type",
         "type": [
           "null",
@@ -12,7 +12,7 @@
       },
 	{
         "default": null,
-	"optional":false,
+	    "optional":false,
         "name": "AccountId",
         "type": [
           "null",
@@ -21,7 +21,7 @@
       },
 	{
         "default": null,
-	"optional":true,
+	    "optional":true,
         "name": "Contract__c",
         "type": [
           "null",
@@ -30,7 +30,7 @@
       },
       {
         "default": null,
-	"optional":false,
+	    "optional":false,
         "name": "Case_Sub_Type__c",
         "type": [
           "null",
@@ -39,7 +39,7 @@
       },
 	{
         "default": null,
-	"optional":true,
+	    "optional":true,
         "name": "MSISDN__c",
         "type": [
           "null",
@@ -48,7 +48,7 @@
       },
 	{
         "default": null,
-	"optional":false,
+	    "optional":false,
         "name": "Case_Detail__c",
         "type": [
           "null",
@@ -57,7 +57,7 @@
       },
 	{
         "default": null,
-	"optional":false,
+	    "optional":false,
         "name": "DMSAttachmentRefId__c",
         "type": [
           "null",
@@ -66,7 +66,7 @@
       },
       {
         "default": null,
-	"optional":false,
+	    "optional":false,
         "name": "_ObjectType",
         "type": [
           "null",
