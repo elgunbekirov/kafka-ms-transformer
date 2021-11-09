@@ -1,7 +1,6 @@
 package com.intellias.kafka.adapter.conversion;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 import org.codehaus.commons.nullanalysis.NotNull;
 
@@ -19,7 +18,7 @@ public final class EventConvertor {
     	    	
     	String type = categoryList
     			.stream()
-    			.filter(X -> X.getName().equals("customer"))
+    			.filter(cat -> cat.getName().equals("customer"))
     			.findFirst().get().getName();
     	    	
     	
@@ -27,7 +26,7 @@ public final class EventConvertor {
 
     	String accountId = relatedPartyList
     			.stream()
-    			.filter(X -> X.getName().equals("customer"))
+    			.filter(par -> par.getName().equals("customer"))
     			.findFirst().get().getId();
 
     	
@@ -36,12 +35,12 @@ public final class EventConvertor {
     	
     	String contractC = characteristicList
     			.stream()
-    			.filter(X -> X.getName().equals("contractid"))
+    			.filter(chr -> chr.getName().equals("contractid"))
     			.findFirst().get().getValue();
     	
     	String msisdnC = characteristicList
     			.stream()
-    			.filter(X -> X.getName().equals("msisdn"))
+    			.filter(chr -> chr.getName().equals("msisdn"))
     			.findFirst().get().getValue();
     	    	
     	

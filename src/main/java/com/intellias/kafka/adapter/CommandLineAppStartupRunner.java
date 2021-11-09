@@ -1,10 +1,6 @@
 package com.intellias.kafka.adapter;
 
-import java.util.Iterator;
-
-import org.apache.avro.Schema;
 import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.trevni.avro.RandomData;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.kafka.core.KafkaTemplate;
