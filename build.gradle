@@ -50,8 +50,13 @@ dependencies {
     
     // Kafka avro
     implementation group: 'org.apache.avro', name: 'avro', version: '1.10.2'
+    
     implementation group: 'io.confluent', name: 'kafka-avro-serializer', version: "$confluentPlatformComponentsVersion"
     implementation group: 'io.confluent', name: 'kafka-streams-avro-serde', version: "$confluentPlatformComponentsVersion"
+  
+    implementation "org.apache.avro:trevni-avro:1.8.2:tests"
+    implementation "org.apache.avro:trevni-core:1.8.2:tests"
+    
 }
 // for Spring annotationProcessor
 compileJava.dependsOn(processResources)

@@ -1,85 +1,80 @@
 {
-   "eventId":"54389d88-5405-40e9-bc95-5cb1ae779ecf",
-   "eventTime":{
-     "string":"1635258762914"
+  "eventId": "732596b6-0766-45e3-a408-d1fe0185b8c4",
+  "eventTime": {
+      "string":"2021-10-01T08:39:55.739+02:00"
    },
-   "eventType":"DocumentCreationNotification",
-   "correlationId":null,
-   "domain":"Document Management",
-   "title":null,
-   "description":null,
-   "priority":null,
-   "timeOcurred":{
-     "string":"1635258762914"
+  "eventType": "DocumentCreationNotification",
+  "correlationId": "1",
+  "domain": "Document Management",
+  "title": "1",
+  "description": "1",
+  "priority": "1",
+  "timeOcurred": {
+      "string":"2021-10-01T08:39:55.739+02:00"
    },
-   "event":{
-      "document":{
-         "id":"string",
-         "href":null,
-         "type":"string",
-         "name":null,
-         "description":null,
-         "lifecycleState":null,
-         "version":null,
-         "creationDate":{"string":"1635258762914"},
-         "lastUpdate":{"string":"1635258762914"},
-         "characteristic":{
-            "array":[
-               {
-                  "name":"stack",
-                  "value":{
-                     "string":"string"
-                  }
-               },
-               {
-                  "name":"note",
-                  "value":{
-                     "string":"Recharge"
-                  }
-               },
-               {
-                  "name":"msisdn",
-                  "value":{
-                     "string":"12121212"
-                  }
-               },
-               {
-                  "name":"contractid",
-                  "value":{
-                     "string":"00000158"
-                  }
-               }
-            ]
-         },
-         "relatedParty":{
-            "array":[
-               {
-                  "id":"string",
-                  "href":null,
-                  "role":null,
-                  "name":{
-                     "string":"C-00051"
-                  },
-                  "validFor":null
-               }
-            ]
-         },
-         "documentSpecification":null,
-         "binaryAttachment":null,
-         "category":{
-            "array":[
-               {
-                  "id":null,
-                  "href":null,
-                  "version":null,
-                  "name":{
-                     "string":"string"
-                  }
-               }
-            ]
-         },
-         "documentRelationship":null,
-         "relatedObject":null
-      }
-   }
+  "event": {
+    "document": {
+      "id": "XSDJKLFEPIQWPEOIQWE",
+      "href": "sffdf",
+      "type": "inbound",
+      "name": "sdfsfd",
+      "description": "rwr",
+      "lifecycleState": "1",
+      "version": "1.1",
+      "creationDate": {
+      "string":"2021-10-01T08:39:55.739+02:00"
+   },
+      "lastUpdate": {
+      "string":"2021-10-01T08:39:55.739+02:00"
+   },
+      "characteristic": [
+        {
+          "name": "stack",
+          "value": "B2C"
+        },
+        {
+          "name": "note",
+          "value": "This is the note"
+        },
+        {
+          "name": "msisdn",
+          "value": "017239847234"
+        },
+        {
+          "name": "contractid",
+          "value": "71293712"
+        }
+      ],
+      "relatedParty": [
+        {
+          "id": "23842038423",
+          "href": "dfg",
+          "role": "dfgdgf",
+          "name": "customer"
+        }
+      ],
+      "binaryAttachment": [{
+         "description" : "sdsd",
+          "href": "dfg", 
+          "id": "23842038423",
+          "type": "dfgdgf",
+          "url": "customer"
+        }],
+      "category": [
+        {
+          "id": "12",
+          "href": "tr",
+          "version": "1.1",
+          "name": "customer"
+        }
+      ],
+      "documentRelationship": [{
+          "type": "23842038423"
+        }],
+      "relatedObject": {
+          "involvement": "23842038423",
+          "reference": "dfg"
+        }
+    }
+  }
 }

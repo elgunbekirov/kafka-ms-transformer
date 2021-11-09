@@ -238,32 +238,6 @@
                                 "type": "string"
                               }
                             ]
-                          },
-                          {
-                            "name": "validFor",
-                            "type": [
-                              {
-                                "fields": [
-                                  {
-                                    "name": "startDateTime",
-                                    "type": {
-                                      "logicalType": "timestamp-millis",
-                                      "type": "long"
-                                    }
-                                  },
-                                  {
-                                    "name": "endDateTime",
-                                    "type": {
-                                      "logicalType": "timestamp-millis",
-                                      "type": "long"
-                                    }
-                                  }
-                                ],
-                                "name": "TimePeriod",
-                                "type": "record"
-                              },
-                              "null"
-                            ]
                           }
                         ],
                         "name": "RelatedPartyRef",
@@ -273,66 +247,7 @@
                     },
                     "null"
                   ]
-                },
-                {
-                  "name": "documentSpecification",
-                  "type": [
-                    {
-                      "fields": [
-                        {
-                          "name": "id",
-                          "type": {
-                            "avro.java.string": "String",
-                            "type": "string"
-                          }
-                        },
-                        {
-                          "name": "name",
-                          "type": [
-                            "null",
-                            {
-                              "avro.java.string": "String",
-                              "type": "string"
-                            }
-                          ]
-                        },
-                        {
-                          "name": "version",
-                          "type": [
-                            "null",
-                            {
-                              "avro.java.string": "String",
-                              "type": "string"
-                            }
-                          ]
-                        },
-                        {
-                          "name": "href",
-                          "type": [
-                            "null",
-                            {
-                              "avro.java.string": "String",
-                              "type": "string"
-                            }
-                          ]
-                        },
-                        {
-                          "name": "URL",
-                          "type": [
-                            "null",
-                            {
-                              "avro.java.string": "String",
-                              "type": "string"
-                            }
-                          ]
-                        }
-                      ],
-                      "name": "DocumentSpecification",
-                      "type": "record"
-                    },
-                    "null"
-                  ]
-                },
+                },               
                 {
                   "name": "binaryAttachment",
                   "type": [
@@ -465,32 +380,6 @@
                                 "type": "string"
                               }
                             ]
-                          },
-                          {
-                            "name": "documentRef",
-                            "type": {
-                              "fields": [
-                                {
-                                  "name": "id",
-                                  "type": {
-                                    "avro.java.string": "String",
-                                    "type": "string"
-                                  }
-                                },
-                                {
-                                  "name": "href",
-                                  "type": [
-                                    "null",
-                                    {
-                                      "avro.java.string": "String",
-                                      "type": "string"
-                                    }
-                                  ]
-                                }
-                              ],
-                              "name": "DocumentRef",
-                              "type": "record"
-                            }
                           }
                         ],
                         "name": "DocumentRelationship",
